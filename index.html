@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Salario Mensual</title>
+</head>
+<body>
+    <center>
+    <h1>Calculadora de Salario Mensual</h1>
+
+    <label for="precioPorHora">Ingrese el precio por hora trabajada:</label>
+    <input type="number" id="precioPorHora" step="0.01" required><br><br>
+
+    <label for="horasTrabajadas">Ingrese las horas trabajadas en el mes:</label>
+    <input type="number" id="horasTrabajadas" required><br><br>
+
+    <button onclick="calcularSalarioMensual()">Resultado</button>
+    </center>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularSalarioMensual() {
+            // Obtener los valores de los inputs
+            var precioPorHora = parseFloat(document.getElementById('precioPorHora').value);
+            var horasTrabajadas = parseFloat(document.getElementById('horasTrabajadas').value);
+
+            // Calcular el salario mensual
+            var salarioMensual = precioPorHora * horasTrabajadas;
+
+            // Mostrar el resultado
+            document.getElementById('resultado').innerText = 'El salario mensual del empleado es: $' + salarioMensual.toFixed(2);
+        }
+    </script>
+</body>
+</html>
